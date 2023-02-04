@@ -1,0 +1,19 @@
+Create a macrame store database
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, name TEXT, quality TEXT, quantity INTEGER,price INTEGER);
+INSERT INTO my_store VALUES (1, "Wall hangings", "Organic", 2, 20);
+INSERT INTO my_store VALUES (2, "Plant hangers", "Non-organic", 15, 15);
+INSERT INTO my_store VALUES (3, "Shelves", "Organic", 3, 50);
+INSERT INTO my_store VALUES (4, "Candle holders", "Organic", 20, 10);
+
+display the total number of items on the store
+SELECT * FROM my_store;
+SELECT SUM (quantity) FROM my_store;
+
+Display all the items on the store ordered by price
+SELECT * FROM my_store ORDER BY price;
+
+How many items are priced over 40?
+SELECT * FROM my_store WHERE price >40;
+
+display the quantity of items in the two quality categories, organic and non-organic
+SELECT quality,SUM (quantity) FROM my_store GROUP BY quality
